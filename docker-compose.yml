@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  xray:
+    image: teddysun/xray
+    restart: always
+    volumes:
+      - ./config.json:/etc/xray/config.json
+    ports:
+      - 443:443
