@@ -38,19 +38,19 @@
         "enabled": true
       },
       "streamSettings": {
-        "network": "tcp",
+"network": "tcp",
         "realitySettings": {
           "dest": "whatsapp.com:443",
           "maxClient": "",
           "maxTimediff": 0,
           "minClient": "",
-          "privateKey": "kFufCodT2jzFxxs3jTT0bmYBhWt5EL1cUv9oDAESbno",
+          "privateKey": "8DUxrzTO6QEUqpsT9A3lcy72HhzPDpK-uJ7N2wjqR2E",
           "serverNames": [
-            "web.whatsapp.com",
-            "whatsapp.com:443"
+            "whatsapp.com",
+            "web.whatsapp.com"
           ],
           "shortIds": [
-            "5b588409"
+            "0ec74dd2"
           ],
           "show": false,
           "xver": 0
@@ -62,7 +62,8 @@
             "type": "none"
           }
         }
-      }
+      },
+      "tag": "inbound-443"
     }
     ],
     "outbounds": [
