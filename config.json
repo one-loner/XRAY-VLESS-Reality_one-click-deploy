@@ -44,13 +44,13 @@
           "maxClient": "",
           "maxTimediff": 0,
           "minClient": "",
-          "privateKey": "8DUxrzTO6QEUqpsT9A3lcy72HhzPDpK-uJ7N2wjqR2E",
+          "privateKey": "pprivkey",
           "serverNames": [
             "whatsapp.com",
             "web.whatsapp.com"
           ],
           "shortIds": [
-            "0ec74dd2"
+            "ssid"
           ],
           "show": false,
           "xver": 0

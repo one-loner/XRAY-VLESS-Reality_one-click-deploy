@@ -10,9 +10,20 @@ echo "Installing requirements. "
 apt-get install -y docker docker-compose curl qrencode
 ip=$(curl http://ifconfig.me)
 uuuid=$(cat /proc/sys/kernel/random/uuid)
+random_hex=$(cat /dev/urandom | tr -dc 'a-f0-9' | head -c 8)
+chmod +x xray
+./xray x25519 > keys.txt
+awk '{print $3}' keys.txt > keys
+privkey=$(head -n1 keys)
+pubkey=$(tail -n1 keys)
+
 cp config.json config.json.original
 cp client_config.json client_config.json.original
 sed -i "s/uuuuid/$uuuid/g" config.json
+sed -i "s/pprivkey/$privkey/g" config.json
+sed -i "s/ppubkey/$pubkey/g" config.json
+sed -i "s/ssid/$random_hex/g" config.json
+sed -i "s/ssid/$random_hex/g" client_config.json
 sed -i "s/uuuuid/$uuuid/g" client_config.json
 sed -i "s/ipaddr/$ip/g" client_config.json
 
@@ -21,8 +32,7 @@ sleep 5
 docker-compose up -d
 docker ps
 
-link='vless://'$uuuid'@'$ip':443?type=tcp&security=reality&pbk=NWTvA5yoa70i6R5oNXCiJAGqMweNBXQY8tclhbmxbT0&fp=firefox&sni=whatsapp.com&sid=0ec74dd2&spx=%2F#Reality'
-
+link='vless://'$uuuid'@'$ip':443?security=reality&sni=whatsapp.com&fp=chrome&pbk='$pubkey'&sid='$random_hex'&type=tcp&encryption=none#Reality'
 echo "Your client link and QR-code "
 echo $link
 qrencode -t ANSIUTF8 $link
