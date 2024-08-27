@@ -3,9 +3,9 @@ if (($EUID !=0)); then
      echo Script must be run by root.
      exit
 fi
-echo "Updating and Upgrading software."
+#echo "Updating and Upgrading software."
 apt-get update
-apt-get upgrade -y
+#apt-get upgrade -y
 echo "Installing requirements. "
 apt-get install -y docker docker-compose curl qrencode
 ip=$(curl http://ifconfig.me)
