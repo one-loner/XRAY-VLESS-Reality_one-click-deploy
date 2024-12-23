@@ -32,7 +32,7 @@ sleep 5
 docker-compose up -d
 docker ps
 
-link='vless://'$uuuid'@'$ip':443?security=reality&sni=whatsapp.com&fp=chrome&pbk='$pubkey'&sid='$random_hex'&type=tcp&encryption=none#Reality'
+link='vless://'$uuuid'@'$ip':443?security=reality&sni=github.com&fp=chrome&pbk='$pubkey'&sid='$random_hex'&type=tcp&encryption=none#Reality'
 echo "Your client link and QR-code "
 echo $link
 qrencode -t ANSIUTF8 $link

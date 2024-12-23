@@ -40,14 +40,14 @@
       "streamSettings": {
 "network": "tcp",
         "realitySettings": {
-          "dest": "whatsapp.com:443",
+          "dest": "github.com:443",
           "maxClient": "",
           "maxTimediff": 0,
           "minClient": "",
           "privateKey": "pprivkey",
           "serverNames": [
-            "whatsapp.com",
-            "web.whatsapp.com"
+            "gist.github.com",
+            "github.com"
           ],
           "shortIds": [
             "ssid"

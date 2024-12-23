@@ -6,8 +6,8 @@ if [ -z "$1" ]; then
 fi
 cp config.json config.json.default
 cp install.sh install.sh.default
-sed -i 's/"whatsapp.com",//g' config.json
-sed -i "s/web.whatsapp.com/$1/g" config.json
-sed -i "s/whatsapp.com:443/$1:443/g" config.json
-sed -i "s/whatsapp.com/$1/g" install.sh
+sed -i 's/"gist.github.com",//g' config.json
+sed -i "s/github.com/$1/g" config.json
+sed -i "s/github.com:443/$1:443/g" config.json
+sed -i "s/github.com/$1/g" install.sh
 echo "Done. Site to cloaking changed to $1. Original files saved with .default postfix."
